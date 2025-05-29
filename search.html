@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Results - Dr. Mohamed Hasain N</title>
+    <link rel="icon" type="image/jpg" href="images/profile.jpg">
+    <link rel="apple-touch-icon" href="images/profile.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <style>
+        .search-results {
+            margin-top: 20px;
+        }
+        
+        .search-result-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #004080;
+        }
+        
+        .search-result-item:hover {
+            transform: translateX(10px);
+            background: #e6f3ff;
+            box-shadow: 0 2px 8px rgba(0,64,128,0.1);
+        }
+        
+        .search-result-title {
+            color: #004080;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .search-result-link {
+            color: #666;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-result-link:hover {
+            color: #004080;
+            transform: translateX(5px);
+        }
+        
+        .search-result-link i {
+            font-size: 14px;
+        }
+        
+        .search-result-excerpt {
+            color: #666;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .search-result-meta {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+        
+        .no-results i {
+            font-size: 48px;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+        
+        .search-query {
+            color: #004080;
+            font-weight: 600;
+        }
+
+        /* Loading Animation Styles */
+        .loading-animation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #004080;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            font-size: 1.1em;
+            color: #004080;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Mohamed Hasain N, Ph.D.</h1>
+            <p>Interdisciplinary Transport Researcher</p>
+            <div class="social-profiles">
+                <a href="https://scholar.google.com/citations?user=CJPTgYwAAAAJ&hl=en" target="_blank" title="Google Scholar">
+                    <i class="ai ai-google-scholar"></i>
+                </a>
+                <a href="https://orcid.org/0000-0001-8842-5801" target="_blank" title="ORCID">
+                    <i class="ai ai-orcid"></i>
+                </a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=57936584500" target="_blank" title="Scopus">
+                    <i class="ai ai-scopus"></i>
+                </a>
+                <a href="https://www.researchgate.net/profile/N-Mohamed-Hasain?ev=hdr_xprf" target="_blank" title="ResearchGate">
+                    <i class="ai ai-researchgate"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mohamed-hasain-n" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        <img src="images/profile.jpg" alt="Dr. Mohamed Hasain N" class="profile-image">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-dropdown">
+                <a href="research.html">Research & Publications</a>
+                <div class="dropdown-content">
+                    <a href="research.html#research-impact">Research Impact</a>
+                    <a href="research.html#journal-articles">Journal Articles</a>
+                    <a href="research.html#book-chapters">Book Chapters</a>
+                    <a href="research.html#conference-presentations">Conference Presentations</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="education.html">Education & Experience</a>
+                <div class="dropdown-content">
+                    <a href="education.html#education">Education</a>
+                    <a href="education.html#teaching-experience">Teaching Experience</a>
+                    <a href="education.html#professional-experience">Professional Experience</a>
+                    <a href="education.html#technical-skills">Technical Skills</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="academics.html">Academics</a>
+                <div class="dropdown-content">
+                    <a href="academics.html#achievements">Achievements</a>
+                    <a href="academics.html#mentorship">Mentorship</a>
+                    <a href="academics.html#peer-review">Peer Review</a>
+                </div>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <form class="search-form" action="search.html" method="get">
+                <input type="text" class="search-input" placeholder="Search..." name="q" id="searchInput">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Search Results</h2>
+            <div id="searchResults" class="search-results">
+                <!-- Search results will be populated here by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>Mohamed Hasain N, Ph.D.</p>
+                <p>Post Doctoral Fellow</p>
+                <p>Indian Institute of Technology Bombay, India</p>
+            </div>
+            <div class="visitor-stats">
+                <div class="visitor-counter">
+                    <i class="fas fa-eye"></i>
+                    <span>Visitors: </span>
+                    <script type="text/javascript" src="https://www.free-counter.org/count.js"></script>
+                    <script type="text/javascript">freeCounter.show('counter')</script>
+                </div>
+                <div class="flag-counter">
+                    <i class="fas fa-flag"></i>
+                    <a href="https://flagcounter.com/">
+                        <img src="https://s01.flagcounter.com/count2/dhuI/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_9/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" border="0">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get search query from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+
+        // Set search input value
+        document.getElementById('searchInput').value = query || '';
+
+        // Search content
+        const searchContent = {
+            'index.html': {
+                title: 'Home',
+                sections: [
+                    {
+                        title: 'Professional Background',
+                        content: 'Dr. Mohamed Hasain N holds a doctorate in Transportation Engineering from the National Institute of Technology Silchar, India. His research interests include traffic safety analysis, crash modelling, transportation planning, and direct demand modelling using machine learning techniques.',
+                        link: 'index.html'
+                    },
+                    {
+                        title: 'Research Interests',
+                        content: 'Traffic Microsimulation, Surrogate Safety Analysis, Transportation Network Resilience, Data-Driven Modelling, Direct Demand Modelling',
+                        link: 'index.html#research-interests'
+                    },
+                    {
+                        title: 'Key Publications',
+                        content: 'Recent publications in IATSS Research, Transportmetrica B: Transport Dynamics, and Traffic Injury Prevention',
+                        link: 'index.html#key-publications'
+                    }
+                ]
+            },
+            'research.html': {
+                title: 'Research & Publications',
+                sections: [
+                    {
+                        title: 'Research Impact',
+                        content: 'Research metrics including peer-reviewed publications, citations, h-index, and i10-index',
+                        link: 'research.html#research-impact'
+                    },
+                    {
+                        title: 'Journal Articles',
+                        content: 'Peer-reviewed journal publications in transportation and safety research',
+                        link: 'research.html#journal-articles'
+                    },
+                    {
+                        title: 'Book Chapters',
+                        content: 'Contributions to book chapters and conference proceedings',
+                        link: 'research.html#book-chapters'
+                    },
+                    {
+                        title: 'Conference Presentations',
+                        content: 'Presentations at national and international conferences',
+                        link: 'research.html#conference-presentations'
+                    }
+                ]
+            },
+            'education.html': {
+                title: 'Education & Experience',
+                sections: [
+                    {
+                        title: 'Education',
+                        content: 'Ph.D. in Transportation Engineering, M.Tech. in Transportation Engineering, B.E. in Civil Engineering',
+                        link: 'education.html#education'
+                    },
+                    {
+                        title: 'Teaching Experience',
+                        content: 'Teaching Assistant at IIT Bombay and NIT Silchar',
+                        link: 'education.html#teaching-experience'
+                    },
+                    {
+                        title: 'Professional Experience',
+                        content: 'Postdoctoral Researcher at Transportation Systems Engineering Lab, IIT Bombay',
+                        link: 'education.html#professional-experience'
+                    },
+                    {
+                        title: 'Technical Skills',
+                        content: 'Traffic Simulation, Programming, Data Analysis, and Other Tools',
+                        link: 'education.html#technical-skills'
+                    }
+                ]
+            },
+            'academics.html': {
+                title: 'Academics',
+                sections: [
+                    {
+                        title: 'Academic Achievements',
+                        content: 'University Silver Medal, Best Paper Award',
+                        link: 'academics.html#achievements'
+                    },
+                    {
+                        title: 'Mentorship',
+                        content: 'Research and Teaching Mentorship activities',
+                        link: 'academics.html#mentorship'
+                    },
+                    {
+                        title: 'Peer Review',
+                        content: 'Journal and Conference Review activities',
+                        link: 'academics.html#peer-review'
+                    }
+                ]
+            },
+            'contact.html': {
+                title: 'Contact',
+                sections: [
+                    {
+                        title: 'Contact Information',
+                        content: 'Email and office address at IIT Bombay',
+                        link: 'contact.html'
+                    }
+                ]
+            }
+        };
+
+        function showLoadingAnimation() {
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = `
+                <div class="loading-animation">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Searching...</div>
+                </div>
+            `;
+        }
+
+        function performSearch() {
+            const searchResults = document.getElementById('searchResults');
+            showLoadingAnimation();
+
+            // Remove artificial delay and perform search immediately
+            searchResults.innerHTML = '';
+
+            if (!query) {
+                searchResults.innerHTML = `
+                    <div class="no-results fade-in">
+                        <i class="fas fa-search"></i>
+                        <p>Please enter a search term to find content.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const searchTerms = query.toLowerCase().split(' ');
+            let resultsFound = false;
+
+            for (const [page, pageData] of Object.entries(searchContent)) {
+                for (const section of pageData.sections) {
+                    const content = section.content.toLowerCase();
+                    const title = section.title.toLowerCase();
+                    
+                    if (searchTerms.some(term => content.includes(term) || title.includes(term))) {
+                        resultsFound = true;
+                        const resultItem = document.createElement('div');
+                        resultItem.className = 'search-result-item fade-in';
+                        resultItem.innerHTML = `
+                            <div class="search-result-title">${section.title}</div>
+                            <div class="search-result-excerpt">${section.content}</div>
+                            <div class="search-result-meta">From: ${pageData.title}</div>
+                            <a href="${section.link}" class="search-result-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Page
+                            </a>
+                        `;
+                        searchResults.appendChild(resultItem);
+                    }
+                }
+            }
+
+            if (!resultsFound) {
+                searchResults.innerHTML = `
+                    <div class="no-results fade-in">
+                        <i class="fas fa-search"></i>
+                        <p>No results found for <span class="search-query">"${query}"</span></p>
+                        <p>Try different keywords or check your spelling.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Perform search when page loads
+        performSearch();
+    </script>
+</body>
+</html> 
