@@ -39,14 +39,47 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research & Publications</a></li>
-            <li><a href="education.html" class="active">Education & Experience</a></li>
+            <li class="has-dropdown">
+                <a href="research.html">Research & Publications</a>
+                <div class="dropdown-content">
+                    <a href="research.html#research-impact">Research Impact</a>
+                    <a href="research.html#journal-articles">Journal Articles</a>
+                    <a href="research.html#book-chapters">Book Chapters</a>
+                    <a href="research.html#conference-presentations">Conference Presentations</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="education.html" class="active">Education & Experience</a>
+                <div class="dropdown-content">
+                    <a href="#education">Education</a>
+                    <a href="#teaching-experience">Teaching Experience</a>
+                    <a href="#professional-experience">Professional Experience</a>
+                    <a href="#technical-skills">Technical Skills</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="academics.html">Academics</a>
+                <div class="dropdown-content">
+                    <a href="academics.html#achievements">Achievements</a>
+                    <a href="academics.html#mentorship">Mentorship</a>
+                    <a href="academics.html#peer-review">Peer Review</a>
+                    <a href="academics.html#other-activities">Other Activities</a>
+                </div>
+            </li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="search-container">
+            <form class="search-form" action="search.html" method="get">
+                <input type="text" class="search-input" placeholder="Search..." name="q">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
     </nav>
 
     <div class="container">
-        <section>
+        <section id="education">
             <h2>Education</h2>
             <ul class="education-list">
                 <li class="education-entry">
@@ -68,7 +101,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="teaching-experience">
             <h2>Teaching Experience</h2>
             <div class="teaching-experience">
                 <div class="role-title">
@@ -83,7 +116,7 @@
                     </div>
                     <ul class="course-list">
                         <li class="course-item">
-                            Geometric Design and Analysis of High-Speed Roadways
+                            CE 773 - Geometric Design and Analysis of High-Speed Roadways
                         </li>
                     </ul>
                 </div>
@@ -96,16 +129,19 @@
                     </div>
                     <ul class="course-list">
                         <li class="course-item">
-                            Traffic Engineering
+                            CE 5403 - Traffic Engineering
                         </li>
                         <li class="course-item">
-                            Highway Lab
+                            CE 313 - Transportation Engineering Laboratory
                         </li>
                         <li class="course-item">
-                            Surveying
+                            CE 5404 -Transportation Engineering Lab 
                         </li>
                         <li class="course-item">
-                            Engineering Graphics and Design
+                            CE 1202 - Surveying
+                        </li>
+                        <li class="course-item">
+                            CE 101 - Engineering Graphics and Design
                         </li>
                     </ul>
                 </div>
@@ -117,7 +153,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="professional-experience">
             <h2>Professional Experience</h2>
             <div class="professional-experience">
                 <div class="role-title">
@@ -162,7 +198,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id="technical-skills">
             <h2>Technical Skills</h2>
             <div class="skills-container">
                 <div class="skill-category">

@@ -39,10 +39,43 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research & Publications</a></li>
-            <li><a href="education.html">Education & Experience</a></li>
+            <li class="has-dropdown">
+                <a href="research.html">Research & Publications</a>
+                <div class="dropdown-content">
+                    <a href="research.html#research-impact">Research Impact</a>
+                    <a href="research.html#journal-articles">Journal Articles</a>
+                    <a href="research.html#book-chapters">Book Chapters</a>
+                    <a href="research.html#conference-presentations">Conference Presentations</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="education.html">Education & Experience</a>
+                <div class="dropdown-content">
+                    <a href="education.html#education">Education</a>
+                    <a href="education.html#teaching-experience">Teaching Experience</a>
+                    <a href="education.html#professional-experience">Professional Experience</a>
+                    <a href="education.html#technical-skills">Technical Skills</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="academics.html">Academics</a>
+                <div class="dropdown-content">
+                    <a href="academics.html#achievements">Achievements</a>
+                    <a href="academics.html#mentorship">Mentorship</a>
+                    <a href="academics.html#peer-review">Peer Review</a>
+                    <a href="academics.html#other-activities">Other Activities</a>
+                </div>
+            </li>
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
+        <div class="search-container">
+            <form class="search-form" action="search.html" method="get">
+                <input type="text" class="search-input" placeholder="Search..." name="q">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
     </nav>
 
     <div class="container">

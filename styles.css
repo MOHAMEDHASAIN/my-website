@@ -76,6 +76,9 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
@@ -84,10 +87,12 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-grow: 1;
 }
 
 nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
@@ -103,6 +108,57 @@ nav ul li a {
     font-weight: 500;
 }
 
+/* Dropdown styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #004080;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: #005299;
+    transform: translateX(5px);
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Add arrow indicator for dropdown */
+nav ul li.has-dropdown > a::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+/* Active state for dropdown items */
+.dropdown-content a.active {
+    background: #005299;
+}
+
+/* Hover effects */
+nav ul li a:hover {
+    background: #004080;
+    transform: translateY(-2px);
+}
+
 nav ul li a::before {
     content: '';
     position: absolute;
@@ -113,11 +169,6 @@ nav ul li a::before {
     background-color: white;
     transition: all 0.3s ease;
     transform: translateX(-50%);
-}
-
-nav ul li a:hover {
-    background: #004080;
-    transform: translateY(-2px);
 }
 
 nav ul li a:hover::before {
@@ -1254,5 +1305,236 @@ section ul li.key-publication .doi-link:hover {
     .journal-covers-container {
         animation: none;
         scroll-snap-align: start;
+    }
+}
+
+/* Achievements Section */
+.achievements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.achievement-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-item i {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.achievement-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+}
+
+.achievement-content p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.achievement-content .year {
+    color: #3498db;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Mentorship Section */
+.mentorship-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mentorship-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.mentorship-item:hover {
+    transform: translateY(-5px);
+}
+
+.mentorship-item i {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.mentorship-content h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.mentorship-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mentorship-content li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.mentorship-content li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+/* Peer Review Section */
+.peer-review-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.journal-item, .conference-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.journal-item:hover, .conference-item:hover {
+    transform: translateY(-5px);
+}
+
+.journal-item i, .conference-item i {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.journal-content h3, .conference-content h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.journal-content ul, .conference-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.journal-content li, .conference-content li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.journal-content li:before, .conference-content li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+/* Search Bar Styles */
+.search-container {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 8px 15px;
+    padding-right: 40px;
+    color: white;
+    font-size: 14px;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    width: 250px;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    color: white;
+}
+
+.search-button i {
+    font-size: 14px;
+}
+
+/* Responsive styles for search bar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    
+    .search-container {
+        width: 100%;
+        padding: 10px 20px;
+        order: -1;
+    }
+    
+    .search-form {
+        width: 100%;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+    
+    .search-input:focus {
+        width: 100%;
     }
 } 

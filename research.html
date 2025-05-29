@@ -39,15 +39,48 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="research.html" class="active">Research & Publications</a></li>
-            <li><a href="education.html">Education & Experience</a></li>
+            <li class="has-dropdown">
+                <a href="research.html" class="active">Research & Publications</a>
+                <div class="dropdown-content">
+                    <a href="#research-impact">Research Impact</a>
+                    <a href="#journal-articles">Journal Articles</a>
+                    <a href="#book-chapters">Book Chapters</a>
+                    <a href="#conference-presentations">Conference Presentations</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="education.html">Education & Experience</a>
+                <div class="dropdown-content">
+                    <a href="education.html#education">Education</a>
+                    <a href="education.html#teaching-experience">Teaching Experience</a>
+                    <a href="education.html#professional-experience">Professional Experience</a>
+                    <a href="education.html#technical-skills">Technical Skills</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="academics.html">Academics</a>
+                <div class="dropdown-content">
+                    <a href="academics.html#achievements">Achievements</a>
+                    <a href="academics.html#mentorship">Mentorship</a>
+                    <a href="academics.html#peer-review">Peer Review</a>
+                    <a href="academics.html#other-activities">Other Activities</a>
+                </div>
+            </li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="search-container">
+            <form class="search-form" action="search.html" method="get">
+                <input type="text" class="search-input" placeholder="Search..." name="q">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
     </nav>
 
     <div class="container">
         <div class="research-container">
-            <section>
+            <section id="research-impact">
                 <h2>Research Impact</h2>
                 <div class="research-metrics">
                     <div class="metric-card">
@@ -134,7 +167,7 @@
             </section>
         </div>
 
-        <section>            
+        <section id="journal-articles">            
             <h2>Journal Articles</h2>
             <div class="publications-list">
                 <div class="publication-item">
@@ -224,7 +257,7 @@
                 </div>
             </div>
         </section>           
-        <section> 
+        <section id="book-chapters"> 
             <h2>Book Chapters & Proceedings</h2>
             <div class="publications-list">
                 <div class="publication-item">
@@ -254,7 +287,7 @@
                 </div>
             </div>
         </section>             
-        <section> 
+        <section id="conference-presentations"> 
             <h2>Conference Presentations</h2>
             <div class="publications-list">
                 <div class="publication-item">
